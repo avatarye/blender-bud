@@ -1,0 +1,46 @@
+# region PEP 621
+# PEP 621 compliant pyproject.toml file for maximal compatibility with users' Python projects
+[project]
+name = "blender-bud"
+version = "0.5.0"
+description = "Blender addon development made easy"
+authors = [
+    { name = "Yongqing Ye", email = "avatar.ye@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "toml>=0.10.2",
+    "icecream>=2.1.3",
+    "packaging>=24.2",
+    "click>=8.1.7",
+]
+scripts = { bbd = "blender_bud.cli:main" }
+# endregion
+
+
+# region Poetry
+# Poetry managed pyproject.toml file for the development of blender-bud itself
+[tool.poetry]
+name = "blender-bud"
+version = "0.5.1"
+description = "Blender addon development made easy"
+authors = ["Yongqing Ye <avatar.ye@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+icecream = "^2.1.3"
+toml = "^0.10.2"
+packaging = "^24.2"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+bbd = "blender_bud.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+# endregion
